@@ -1,0 +1,47 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Cat
+{
+protected:
+	 string catName;
+public:
+	Cat() { catName = "Sharik"; }
+};
+
+class Dog
+{
+protected:
+	string dogName;
+public:
+	Dog() { dogName = "Pashtet"; }
+};
+
+class Parrot
+{
+protected:
+	string parrotName;
+public:
+	Parrot() { parrotName = "Jack"; }
+};
+
+struct Animal : public Cat, public Dog, public Parrot
+{
+	void printNames()
+	{
+		cout << "Name of the cat - " << catName << endl;
+		cout << "Name of the dog - " << dogName << endl;
+		cout << "Name of the parrot - " << parrotName << endl;
+	}
+	~Animal(){}
+};
+
+int main()
+{
+	Animal animals;
+	animals.printNames();
+	system("pause");
+	return 0;
+}
